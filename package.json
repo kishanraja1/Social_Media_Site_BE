@@ -2,7 +2,7 @@
   "name": "social_media_site_be",
   "version": "1.0.0",
   "engines": {
-    "node":"16.13.1"
+    "node": "16.13.1"
   },
   "description": "",
   "main": "server.js",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/kishanraja1/Social_Media_Site_BE#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "mongoose": "^6.2.4"
