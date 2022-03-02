@@ -6,6 +6,9 @@ const express = require('express');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
+const cors = require('cors')
+const postsController = require('./controllers/posts.js')
+
 require('dotenv').config()
 //___________________
 //Port
@@ -40,10 +43,11 @@ app.use(express.static('public'));
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
-const postsController = require('./controllers/posts.js')
-app.use('/posts', postsController)
-const cors = require('cors')
+
+
 app.use(cors())
+
+app.use('/posts', postsController)
 
 //use method override
 // app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
