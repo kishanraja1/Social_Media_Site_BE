@@ -36,7 +36,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 //___________________
 //Middleware
 //___________________
-
+app.use(cors())
 //use public folder for static assets
 app.use(express.static('public'));
 
