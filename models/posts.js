@@ -5,7 +5,9 @@ const postSchema = new mongoose.Schema({
   post: String,
   checking: Boolean,
   likes: Number,
-  dislikes: Number
+  dislikes: Number,
+  likeBoolean: Boolean,
+  dislikeBoolean:Boolean
 })
 
 
