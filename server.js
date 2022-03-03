@@ -8,6 +8,7 @@ const app = express ();
 const db = mongoose.connection;
 const cors = require('cors')
 const postsController = require('./controllers/posts.js')
+const usersController = require('./controllers/userInfo.js')
 
 require('dotenv').config()
 //___________________
@@ -48,6 +49,7 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 app.use(cors())
 
 app.use('/posts', postsController)
+app.use('/users', usersController)
 
 //use method override
 // app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
