@@ -8,8 +8,7 @@ router.post('/createaccount', (req, res) => {
   req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
   Users.create(req.body, (err, createdUser) => {
     if(err){
-      console.log(err);
-      res.json(err.message)
+      res.json('User already exists')
     } else {
       console.log('user is created', createdUser);
       res.json(createdUser)
