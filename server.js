@@ -9,6 +9,7 @@ const db = mongoose.connection;
 const cors = require('cors')
 const postsController = require('./controllers/posts.js')
 const usersController = require('./controllers/userInfo.js')
+const io = require('socket.io')(3000)
 
 require('dotenv').config()
 //___________________
@@ -33,6 +34,10 @@ mongoose.connect(MONGODB_URI , { useNewUrlParser: true }
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
+
+io.on('connection', socket => {
+  console.log(socket.id);
+})
 
 //___________________
 //Middleware
