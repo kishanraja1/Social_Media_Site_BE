@@ -3,7 +3,9 @@ const mongoose = require('mongoose')
 const postSchema = new mongoose.Schema({
   name: String,
   post: String,
-  checking: Boolean
+  checking: Boolean,
+  likes: Number,
+  dislikes: Number
 })
 
 
