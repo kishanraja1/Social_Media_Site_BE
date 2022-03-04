@@ -9,7 +9,7 @@ const db = mongoose.connection;
 const cors = require('cors')
 const postsController = require('./controllers/posts.js')
 const usersController = require('./controllers/userInfo.js')
-const io = require('socket.io')(3000)
+const io = require('socket.io')(3007)
 
 require('dotenv').config()
 //___________________
