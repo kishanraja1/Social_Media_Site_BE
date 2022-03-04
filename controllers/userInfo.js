@@ -40,4 +40,11 @@ router.get('/', (req,res) => {
   })
 })
 
+router.get('/findOne/:username', (req,res) => {
+  Users.findOne({username:req.params.username}, (err, foundUser) => {
+    res.json(foundUser)
+  })
+  // res.send('okay')
+})
+
 module.exports = router
