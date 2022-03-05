@@ -9,6 +9,8 @@ const postSchema = new mongoose.Schema({
   dislikes: Number,
   likeBoolean: Boolean,
   dislikeBoolean:Boolean,
+  comments: [{body: String}],
+  date: {type: Date, default: Date.now},
 },{timestamps:true})
 
 const Posts = mongoose.model('Post', postSchema)
