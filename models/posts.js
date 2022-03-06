@@ -11,10 +11,7 @@ const postSchema = new mongoose.Schema({
   dislikeBoolean:Boolean,
   comments: [{body: String}],
   date: {type: Date, default: Date.now},
-  react:[{rAuthor: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required:true, default:"622155e2385f63508588e9a0"},
-    likeBoolean: {type:Boolean, required:true, default:false},
-    dislikeBoolean:{type:Boolean, required:true, default:false}
-  }]
+  react:[]
 },{timestamps:true})
 
 const Posts = mongoose.model('Post', postSchema)
@@ -22,3 +19,8 @@ const Posts = mongoose.model('Post', postSchema)
 module.exports = Posts
 
 // type:String, unique:true
+
+// react:[{rAuthor: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required:true, default:"622155e2385f63508588e9a0"},
+//     likeBoolean: {type:Boolean, required:true, default:false},
+//     dislikeBoolean:{type:Boolean, required:true, default:false}
+//   }]
