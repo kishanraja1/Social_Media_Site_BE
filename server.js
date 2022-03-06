@@ -68,7 +68,7 @@ app.get('/' , (req, res) => {
   res.send('Hello World!');
 });
 
-app.get('/both/:user', (req,res) =>{
+app.get('/both', (req,res) =>{
   res.send('okay it works')
 } )
 
