@@ -2,12 +2,12 @@ const mongoose = require('mongoose')
 
 const postSchema = new mongoose.Schema({
   name: String,
-  author: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+  author: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required:true},
   post: String,
   checking: Boolean,
   likes: Number,
   dislikes: Number,
-  likeBoolean: Boolean,
+  likeBoolean:Boolean,
   dislikeBoolean:Boolean,
   comments: [{body: String}],
   date: {type: Date, default: Date.now},
@@ -20,6 +20,8 @@ const postSchema = new mongoose.Schema({
 const Posts = mongoose.model('Post', postSchema)
 
 module.exports = Posts
+
+
 
 // type:String, unique:true
 
