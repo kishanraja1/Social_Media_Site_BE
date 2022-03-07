@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const postSchema = new mongoose.Schema({
   name: String,
-  author: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+  author: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required:true},
   post: String,
   checking: Boolean,
   likes: Number,
@@ -18,10 +18,3 @@ const postSchema = new mongoose.Schema({
 const Posts = mongoose.model('Post', postSchema)
 
 module.exports = Posts
-
-// type:String, unique:true
-
-// react:[{rAuthor: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required:true, default:"622155e2385f63508588e9a0"},
-//     likeBoolean: {type:Boolean, required:true, default:false},
-//     dislikeBoolean:{type:Boolean, required:true, default:false}
-//   }]

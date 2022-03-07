@@ -9,6 +9,7 @@ const db = mongoose.connection;
 const cors = require('cors')
 const postsController = require('./controllers/posts.js')
 const usersController = require('./controllers/userInfo.js')
+const likesController = require('./controllers/likes.js')
 
 require('dotenv').config()
 //___________________
@@ -50,6 +51,7 @@ app.use(cors())
 
 app.use('/posts', postsController)
 app.use('/users', usersController)
+app.use('/likes', likesController)
 
 //use method override
 // app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
@@ -63,9 +65,6 @@ app.get('/' , (req, res) => {
   res.send('Hello World!');
 });
 
-app.get('/both', (req,res) =>{
-  res.send('okay it works')
-} )
 
 //___________________
 //Listener
