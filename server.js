@@ -47,7 +47,8 @@ app.use(express.urlencoded({ extended: false }));// extended: false - does not a
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 
 
-app.use(cors())
+// app.use(cors())
+app.options('*', cors())
 
 app.use('/posts', postsController)
 app.use('/users', usersController)
